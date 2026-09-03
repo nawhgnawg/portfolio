@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: lim-gwanghwan-portfolio-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: APP_CORS_ALLOWED_ORIGINS
+        sync: false
+      - key: PORTFOLIO_ADMIN_USERNAME
+        sync: false
+      - key: PORTFOLIO_ADMIN_PASSWORD
+        sync: false

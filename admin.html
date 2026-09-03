@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문의 관리 | 임광환</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <div class="admin-header"><a class="brand" href="index.html">IG<span>.</span></a><a href="index.html">사이트로 돌아가기 ↗</a></div>
+    <section class="admin-login" id="login-panel">
+      <p class="section-kicker">PRIVATE AREA</p>
+      <h1>문의 내역을<br><em>확인합니다.</em></h1>
+      <form id="login-form"><label>관리자 아이디<input id="username" type="text" value="admin" required></label><label>관리자 비밀번호<input id="password" type="password" required></label><button class="button button-primary" type="submit">로그인 <span>↗</span></button><p id="login-status" class="admin-status"></p></form>
+    </section>
+    <section class="admin-content is-hidden" id="content-panel">
+      <div class="admin-title"><div><p class="section-kicker">INBOX</p><h1>문의 내역</h1></div><button class="button button-ghost" id="logout-button">로그아웃</button></div>
+      <div id="contact-list" class="contact-list"></div>
+    </section>
+  </main>
+  <script src="api-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
