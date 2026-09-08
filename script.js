@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js-enabled');
+
 const revealItems = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
