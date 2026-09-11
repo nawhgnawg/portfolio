@@ -33,3 +33,33 @@ details { max-width: 560px; } summary { list-style: none; cursor: pointer; color
 .site-footer { display: flex; justify-content: space-between; padding: 23px 0; border-top: 1px solid var(--line); color: var(--muted); font: .58rem var(--mono); letter-spacing: .08em; } .site-footer a { color: var(--text); }
 .reveal { opacity: 1; transform: none; } .js-enabled .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; } .js-enabled .reveal.is-visible { opacity: 1; transform: none; } .reveal-delay { transition-delay: .15s; } @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 @media (max-width: 800px) { .section-shell, .site-header { width: min(100% - 40px, 620px); } .site-header { height: 72px; } .main-nav { gap: 16px; margin-left: 0; } .header-contact { display: none; } .hero { min-height: auto; display: block; padding: 95px 0 120px; } h1 { font-size: clamp(3.4rem, 16vw, 5.2rem); } .hero-visual { height: 330px; margin-top: 45px; } .orbit-one { width: 290px; height: 130px; } .orbit-two { height: 300px; width: 210px; } .visual-core { width: 112px; height: 112px; font-size: 2rem; } .floating-card { transform: scale(.84); } .card-api { left: 0; top: 25px; } .card-data { right: -6px; top: 130px; } .card-system { left: 25px; bottom: 20px; } .hero-scroll { bottom: 35px; } .skills-board { padding: 70px 0 85px; } .skills-row { display: block; padding: 20px 0; } .skills-row h3 { margin: 0 0 14px; } .skill-category { margin-bottom: 14px; } .skill-tags { gap: 7px; } .skill-tag { padding: 7px 10px; font-size: .65rem; } .section-grid { display: block; } .section-label { margin-bottom: 48px; } .intro-section, .timeline-section { padding: 110px 0; } .intro-columns { display: block; } .intro-columns p + p { margin-top: 20px; } .profile-info { grid-template-columns: 1fr; gap: 24px; } .profile-info-wide { grid-column: auto; } .section-heading { align-items: start; display: block; } .section-number { display: block; margin-top: 24px; } .projects-section { padding: 70px 0 110px; } .project-card { grid-template-columns: 40px 1fr; gap: 15px; } .project-side { grid-column: 2; border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } .project-period, .project-role { margin-bottom: 0; } .tech-pills { grid-column: 1 / -1; } .timeline-item { grid-template-columns: 1fr; gap: 8px; } .contact-card { padding: 34px 25px; align-items: start; } .contact-card h2 { font-size: 2rem; } .contact-arrow { width: 50px; height: 50px; font-size: 1.4rem; flex: none; } .contact-form { padding: 24px 18px; } .form-heading { display: block; } .form-heading p:last-child { margin-top: 10px; } .form-row { grid-template-columns: 1fr; gap: 16px; } .form-footer { display: block; } .form-status { margin-top: 12px; } .contact-links { display: block; } .contact-links a { grid-template-columns: 65px 1fr auto; font-size: .7rem; } .site-footer { display: grid; gap: 8px; font-size: .52rem; } }
+ .project-gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin-bottom: 24px; }
+ .project-gallery-dual { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .project-gallery a { display: block; overflow: hidden; border: 1px solid var(--line); background: var(--surface-light); }
+ .project-gallery img { display: block; width: 100%; height: 220px; object-fit: cover; transition: transform .35s ease, opacity .35s ease; }
+ .project-gallery a:hover img { transform: scale(1.035); opacity: .86; }
+ .project-gallery-health img { object-fit: contain; object-position: center; }
+ @media (max-width: 800px) { .project-gallery img { height: 180px; } .project-gallery-dual { grid-template-columns: 1fr; } .project-gallery-health { grid-template-columns: repeat(2, minmax(0, 1fr)); } .project-gallery-health img { height: 210px; } }
+ details .project-gallery-inline { margin: 20px 0 0; }
+ details .project-gallery-inline img { height: 145px; }
+ details .project-gallery-inline:not(.project-gallery-dual) img { height: 260px; object-fit: contain; background: var(--surface-light); }
+ details .project-gallery-health img { object-fit: contain; }
+ @media (max-width: 800px) { details .project-gallery-inline img { height: 170px; } }
+ .project-screens { margin-top: 18px; }
+ .project-screens summary { color: var(--violet-bright); }
+ .project-gallery-screens { margin-top: 16px; }
+ .project-gallery-screens { display: flex; grid-template-columns: none; flex-wrap: nowrap; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+ .project-gallery-screens a { flex: 0 0 112px; }
+ .project-gallery-screens img { height: 82px; object-fit: cover; }
+ .image-modal { position: fixed; inset: 0; z-index: 20; display: none; align-items: center; justify-content: center; padding: 40px 100px; background: rgba(5, 5, 9, .92); }
+ .image-modal.is-open { display: flex; }
+ .image-modal-content { display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: min(900px, 78vw); max-height: 90vh; margin: 0; }
+ .image-modal-content img { display: block; max-width: 100%; max-height: 78vh; object-fit: contain; }
+ .image-modal-content figcaption { color: var(--muted); font: .7rem var(--mono); text-align: center; }
+ .image-modal-close, .image-modal-nav { position: absolute; display: grid; place-items: center; border: 1px solid var(--line); background: rgba(17, 17, 25, .85); color: var(--text); cursor: pointer; }
+ .image-modal-close { top: 24px; right: 28px; width: 42px; height: 42px; font-size: 1.7rem; }
+ .image-modal-nav { top: 50%; width: 52px; height: 52px; margin-top: -26px; color: var(--violet-bright); font-size: 1.8rem; }
+ .image-modal-prev { left: 30px; }
+ .image-modal-next { right: 30px; }
+ .image-modal-close:hover, .image-modal-nav:hover { border-color: var(--violet); background: var(--violet); color: var(--bg); }
+ @media (max-width: 800px) { .image-modal { padding: 55px 56px 35px; } .image-modal-content { max-width: 100%; } .image-modal-nav { width: 38px; height: 44px; } .image-modal-prev { left: 10px; } .image-modal-next { right: 10px; } .image-modal-close { top: 12px; right: 12px; } }
